@@ -18,7 +18,9 @@ jobs:
       runtime: node
       node-version: "18"
       environment: ${{ github.ref == 'refs/heads/main' && 'main' || 'develop' }}
-      sonar-enabled: true
+      sonar-enabled: false
       notifications-enabled: true
-      sonar-project-key: new-ticket-booking-service
-    secrets: inherit
+      sonar-project-key: new_ticket-booking-service
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
